@@ -14,10 +14,15 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "quotes": [2, "single", { "avoidEscape": true }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ]
+    ],
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }]
   }
 }

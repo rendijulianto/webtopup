@@ -1,10 +1,9 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { useEffect } from "react";
-import styles from "../styles/Home.module.css";
-import AOS from "aos";
-import { useRouter } from "next/router";
+import type { NextPage } from 'next';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import AOS from 'aos';
+import Navbar from '../components/organisms/Navbar';
+
 const Home: NextPage = () => {
   useEffect(() => {
     AOS.init();
@@ -12,95 +11,7 @@ const Home: NextPage = () => {
   const router = useRouter();
   return (
     <>
-      <section>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light bg-white pt-lg-40 pb-lg-40 pt-30 pb-50">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/#">
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 60 60"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <mask
-                  id="mask0"
-                  mask-type="alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="60"
-                  height="60"
-                >
-                  <circle cx="30" cy="30" r="30" fill="#3546AB" />
-                </mask>
-                <g mask="url(#mask0)">
-                  <circle cx="30" cy="30" r="30" fill="#00BAFF" />
-                  <path
-                    d="M41.5001 35.0001C52.3001 38.2001 49.6668 48.0001 47.0001 52.5001L71.0001 60.5001L79.5001 -12.9999C63.6667 -13.8333 29.5001 -14.9999 19.5001 -12.9999C7.00007 -10.4999 13.5001 4.00006 12.0001 14.0001C10.5001 24.0001 28.0001 31.0001 41.5001 35.0001Z"
-                    fill="#4D17E2"
-                  />
-                  <path
-                    d="M54.495 47.785C54.495 51.285 53.655 54.54 51.975 57.55C50.295 60.56 47.74 63.01 44.31 64.9C40.88 66.79 36.645 67.735 31.605 67.735C26.705 67.735 22.33 66.86 18.48 65.11C14.7 63.29 11.655 60.84 9.345 57.76C7.105 54.61 5.81 51.04 5.46 47.05H15.645C15.855 49.15 16.555 51.215 17.745 53.245C19.005 55.205 20.755 56.85 22.995 58.18C25.305 59.44 28.07 60.07 31.29 60.07C35.49 60.07 38.71 58.95 40.95 56.71C43.19 54.47 44.31 51.6 44.31 48.1C44.31 45.09 43.505 42.64 41.895 40.75C40.355 38.86 38.43 37.39 36.12 36.34C33.81 35.22 30.66 34.03 26.67 32.77C21.98 31.23 18.2 29.795 15.33 28.465C12.53 27.065 10.115 25 8.085 22.27C6.125 19.54 5.145 15.935 5.145 11.455C5.145 7.60499 6.055 4.20999 7.875 1.27C9.765 -1.67 12.425 -3.945 15.855 -5.555C19.355 -7.165 23.45 -7.97 28.14 -7.97C35.42 -7.97 41.195 -6.185 45.465 -2.615C49.735 0.884996 52.22 5.365 52.92 10.825H42.63C42.07 7.885 40.565 5.295 38.115 3.055C35.665 0.814997 32.34 -0.305003 28.14 -0.305003C24.29 -0.305003 21.21 0.709996 18.9 2.73999C16.59 4.69999 15.435 7.5 15.435 11.14C15.435 14.01 16.17 16.355 17.64 18.175C19.18 19.925 21.07 21.325 23.31 22.375C25.55 23.355 28.63 24.475 32.55 25.735C37.31 27.275 41.125 28.745 43.995 30.145C46.935 31.545 49.42 33.68 51.45 36.55C53.48 39.35 54.495 43.095 54.495 47.785Z"
-                    fill="white"
-                  />
-                </g>
-              </svg>
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ms-auto text-lg gap-lg-0 gap-2">
-                <li className="nav-item my-auto">
-                  <a className="nav-link active" aria-current="page" href="/#">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item my-auto">
-                  <a className="nav-link" href="/#">
-                    Games
-                  </a>
-                </li>
-                <li className="nav-item my-auto">
-                  <a className="nav-link" href="/#">
-                    Rewards
-                  </a>
-                </li>
-
-                <li className="nav-item my-auto">
-                  <a className="nav-link" href="/#">
-                    Discover
-                  </a>
-                </li>
-                <li className="nav-item my-auto me-lg-20">
-                  <a className="nav-link" href="/#">
-                    Global Rank
-                  </a>
-                </li>
-                <li className="nav-item my-auto">
-                  <a
-                    className="btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill"
-                    href="./src/sign-in.html"
-                    role="button"
-                  >
-                    Sign In
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </section>
-
+    <Navbar />
       <section className="header pt-lg-60 pb-50">
         <div className="container-xxl container-fluid">
           <div className="row gap-lg-0 gap-5">
@@ -109,15 +20,23 @@ const Home: NextPage = () => {
                 Halo gamers,
               </p>
               <h1 className="header-title color-palette-1 fw-bold">
-                Topup & Get <span className="d-sm-inline d-none">a</span>
+                Topup & Get
+                {' '}
+                <span className="d-sm-inline d-none">a</span>
                 <span className="d-sm-none d-inline">a</span>
-                <span className="underline-blue"> New</span>{" "}
-                <br className="d-sm-block d-none" />{" "}
-                <span className="underline-blue">Experience</span> in Gaming
+                <span className="underline-blue"> New</span>
+                {' '}
+                <br className="d-sm-block d-none" />
+                {' '}
+                <span className="underline-blue">Experience</span>
+                {' '}
+                in Gaming
               </h1>
               <p className="mt-30 mb-40 text-lg color-palette-1">
                 Kami menyediakan jutaan cara untuk membantu
-                <br className="d-md-block d-none" /> players menjadi pemenang
+                <br className="d-md-block d-none" />
+                {' '}
+                players menjadi pemenang
                 sejati
               </p>
               <div className="d-flex flex-lg-row flex-column gap-4">
@@ -253,7 +172,9 @@ const Home: NextPage = () => {
         <div className="container-fluid">
           <h2 className="text-4xl fw-bold color-palette-1 text-center mb-30">
             It’s Really That
-            <br /> Easy to Win the Game
+            <br />
+            {' '}
+            Easy to Win the Game
           </h2>
           <div className="row gap-lg-0 gap-4" data-aos="fade-up">
             <div className="col-lg-4">
@@ -301,16 +222,16 @@ const Home: NextPage = () => {
                       <path
                         d="M37 55H-4"
                         stroke="white"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M23 64L-4 64"
                         stroke="#B7B0F4"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <rect
                         x="23"
@@ -334,7 +255,7 @@ const Home: NextPage = () => {
                       cy="29.5"
                       r="5.5"
                       stroke="white"
-                      stroke-width="4"
+                      strokeWidth="4"
                     />
                   </g>
                 </svg>
@@ -382,16 +303,16 @@ const Home: NextPage = () => {
                     <path
                       d="M32 36H5"
                       stroke="white"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M27 45L9 45"
                       stroke="#B7B0F4"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <rect
                       x="56"
@@ -404,16 +325,16 @@ const Home: NextPage = () => {
                     <path
                       d="M97 50H70"
                       stroke="white"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M92 59L74 59"
                       stroke="#6B63AC"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </g>
                 </svg>
@@ -461,23 +382,23 @@ const Home: NextPage = () => {
                     <path
                       d="M50 46L50 68"
                       stroke="white"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M40 54L40 68"
                       stroke="#B7B0F4"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M30 60L30 68"
                       stroke="#B7B0F4"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <circle cx="40" cy="26" r="14" fill="#2B2467" />
                     <path
@@ -504,7 +425,9 @@ const Home: NextPage = () => {
         <div className="container-fluid">
           <h2 className="text-4xl fw-bold color-palette-1 mb-30">
             Our Featured
-            <br /> Games This Year
+            <br />
+            {' '}
+            Games This Year
           </h2>
           <div
             className="d-flex flex-row flex-lg-wrap overflow-setting justify-content-lg-between gap-lg-3 gap-4"
@@ -705,8 +628,8 @@ const Home: NextPage = () => {
                 Players Top Up
               </p>
             </div>
-            <div className="vertical-line me-lg-35 ms-lg-35 d-lg-block d-none"></div>
-            <div className="horizontal-line mt-6 mb-6 me-lg-35 ms-lg-35 d-lg-none d-block"></div>
+            <div className="vertical-line me-lg-35 ms-lg-35 d-lg-block d-none" />
+            <div className="horizontal-line mt-6 mb-6 me-lg-35 ms-lg-35 d-lg-none d-block" />
             <div className="me-lg-35 ms-lg-35">
               <p className="text-4xl text-lg-start text-center color-palette-1 fw-bold m-0">
                 12.500
@@ -715,8 +638,8 @@ const Home: NextPage = () => {
                 Games Available
               </p>
             </div>
-            <div className="horizontal-line mt-6 mb-6 me-lg-35 ms-lg-35 d-lg-none d-block"></div>
-            <div className="vertical-line me-lg-35 ms-lg-35 d-lg-block d-none"></div>
+            <div className="horizontal-line mt-6 mb-6 me-lg-35 ms-lg-35 d-lg-none d-block" />
+            <div className="vertical-line me-lg-35 ms-lg-35 d-lg-block d-none" />
             <div className="me-lg-35 ms-lg-35">
               <p className="text-4xl text-lg-start text-center color-palette-1 fw-bold m-0">
                 99,9%
@@ -725,8 +648,8 @@ const Home: NextPage = () => {
                 Happy Players
               </p>
             </div>
-            <div className="horizontal-line mt-6 mb-6 me-lg-35 ms-lg-35 d-lg-none d-block"></div>
-            <div className="vertical-line me-lg-35 ms-lg-35 d-lg-block d-none"></div>
+            <div className="horizontal-line mt-6 mb-6 me-lg-35 ms-lg-35 d-lg-none d-block" />
+            <div className="vertical-line me-lg-35 ms-lg-35 d-lg-block d-none" />
             <div className="me-lg-35 ms-lg-35">
               <p className="text-4xl text-lg-start text-center color-palette-1 fw-bold m-0">
                 4.7
@@ -758,13 +681,17 @@ const Home: NextPage = () => {
               <div className="">
                 <h2 className="text-4xl fw-bold color-palette-1 mb-30">
                   Win the battle.
-                  <br /> Be the Champion.
+                  <br />
+                  {' '}
+                  Be the Champion.
                 </h2>
                 <p className="text-lg color-palette-1 mb-30">
                   Kami menyediakan jutaan cara untuk
                   <br className="d-sm-block d-none" />
                   membantu players menjadi
-                  <br className="d-sm-block d-none" /> pemenang sejati
+                  <br className="d-sm-block d-none" />
+                  {' '}
+                  pemenang sejati
                 </p>
                 <div className="d-md-block d-flex flex-column w-100">
                   <a
@@ -786,7 +713,7 @@ const Home: NextPage = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-4 text-lg-start text-center">
-                <a href="" className="mb-30">
+                <a href="/" className="mb-30">
                   <svg
                     width="60"
                     height="60"
@@ -820,7 +747,9 @@ const Home: NextPage = () => {
                 </a>
                 <p className="mt-30 text-lg color-palette-1 mb-30">
                   StoreGG membantu gamers
-                  <br /> untuk menjadi pemenang sejati
+                  <br />
+                  {' '}
+                  untuk menjadi pemenang sejati
                 </p>
                 <p className="mt-30 text-lg color-palette-1 mb-30">
                   Copyright 2021. All Rights Reserved.
@@ -835,7 +764,7 @@ const Home: NextPage = () => {
                     <ul className="list-unstyled">
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           About Us
@@ -843,7 +772,7 @@ const Home: NextPage = () => {
                       </li>
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           Press Release
@@ -851,7 +780,7 @@ const Home: NextPage = () => {
                       </li>
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           Terms of Use
@@ -859,7 +788,7 @@ const Home: NextPage = () => {
                       </li>
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           Privacy & Policy
@@ -874,7 +803,7 @@ const Home: NextPage = () => {
                     <ul className="list-unstyled">
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           Refund Policy
@@ -882,7 +811,7 @@ const Home: NextPage = () => {
                       </li>
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           Unlock Rewards
@@ -890,7 +819,7 @@ const Home: NextPage = () => {
                       </li>
                       <li className="mb-6">
                         <a
-                          href=""
+                          href="/"
                           className="text-lg color-palette-1 text-decoration-none"
                         >
                           Live Chatting
